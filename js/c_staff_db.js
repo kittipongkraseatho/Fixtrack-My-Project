@@ -39,6 +39,7 @@ function addMemberToDOM(is_update, member, key, row) {
       '<td>' + member.password + '</td>' +
       '<td>' + member.status + '</td>' +
       '<td>' +
+      '</td>' +
     '</tr>';
   
   if ( is_update ) {

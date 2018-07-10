@@ -8,12 +8,14 @@ function getFormData() {
   var phone = $('#phone').val();
   var email = $('#email').val();
   var address = $('#address').val();
+  var imageUrl =$('#imageUrl').val();
   
   return {
     namegarage: namegarage,
     phone: phone,
     email: email,
-    address: address
+    address: address,
+    imageUrl: imageUrl
   };
 }
 
@@ -36,7 +38,6 @@ function addMemberToDOM(is_update, member, key, row) {
       '<td>' + member.address + '</td>' +
       '<td>' +
         '<button class="btn btn-sm update">Update</button>' +
-        '<button class="btn btn-sm grey darken-1 delete">Delete</button>' +
       '</td>' +
     '</tr>';
   
@@ -75,6 +76,8 @@ function getMember() {
     $('#phone').val(member.phone);
     $('#email').val(member.email);
     $('#address').val(member.address);
+    $('#imageUrl').val(member.imageUrl);
+
     
     submit.text('Update');
     submit.unbind().on('click', function(e) {

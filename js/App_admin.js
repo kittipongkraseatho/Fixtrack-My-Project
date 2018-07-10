@@ -17,7 +17,7 @@
               var uid = user.uid;
               var providerData = user.providerData;
 
-              var admin = 'kittipongbig@gmail.com';
+              var admin = 'admin@admin.com';
               if(C_email === admin){
                   admin = 'admin';
               }

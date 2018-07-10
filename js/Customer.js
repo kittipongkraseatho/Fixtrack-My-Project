@@ -1,22 +1,20 @@
 var db = firebase.database();
-var members_ref = db.ref('User').child('Garage_staff').orderByChild('status').equalTo('access_time');
- // endat deprecated use limitToFirst ;
+var members_ref = db.ref('User').child('Garage');
 var table = $('table tbody');
 
 
 function getFormData() {
-  var namestaff = $('#namestaff').val();
-  var phone = $('#phone').val();
+  var namegarage = $('#namegarage').val();
+  var link = $('#link').val();
+  var link2 = $('#link2').val();
   var email = $('#email').val();
-  var password = $('#password').val();
-  var status = $('#status').val();
+
   
   return {
     namegarage: namegarage,
-    phone: phone,
-    email: email,
-    password: password,
-    status: status
+    link: link,
+    link2: link2,
+    email: email
   };
 }
 
@@ -33,12 +31,12 @@ function addMember(event) {
 function addMemberToDOM(is_update, member, key, row) {
   var el = 
     '<tr data-key="' + key + '">' + 
-      '<td>' + member.namestaff + '</td>' +
-      '<td>' + member.phone + '</td>' + 
-      '<td>' + member.email + '</td>' +
-      '<td>' + member.password + '</td>' +
-      '<td>' + member.status + '</td>' +
+      '<td>' + member.namegarage + '</td>' +
+      '<td>' + member.link + '</td>' + 
+      '<td>' + member.link2 + '</td>' +
       '<td>' +
+        '<button class="btn btn-sm update">ดูข้อมูล</button>' +
+      '</td>' +
     '</tr>';
   
   if ( is_update ) {
@@ -72,12 +70,12 @@ function getMember() {
   .then(function(member) {
     member = member.val();
     
-    $('#namestaff').val(member.namestaff);
-    $('#phone').val(member.phone);
+    $('#namegarage').val(member.namegarage);
     $('#email').val(member.email);
-    $('#password').val(member.password);
-    $('#status').val(member.status);
+    $('#link').val(member.link);
+    $('#link2').val(member.link2);
     
+    submit.text('Update');
     submit.unbind().on('click', function(e) {
       e.preventDefault();
       
@@ -118,6 +116,9 @@ function getMembers() {
 
 function init() {
   getMembers();
+  
+  $("#submit").on("click", addMember);
+  table.on('click', 'button.update', getMember);
 }
 
 init();

@@ -4,14 +4,14 @@ var table = $('table tbody');
 
 
 function getFormData() {
-  var title = $('#title').val();
+  var namestaff = $('#namestaff').val();
   var phone = $('#phone').val();
   var email = $('#email').val();
   var password = $('#password').val();
-  var status = $('#status').val();
+  var status = 'check';
   
   return {
-    namegarage: namegarage,
+    namestaff: namestaff,
     phone: phone,
     email: email,
     password: password,
@@ -32,7 +32,7 @@ function addMember(event) {
 function addMemberToDOM(is_update, member, key, row) {
   var el = 
     '<tr data-key="' + key + '">' + 
-      '<td>' + member.title + '</td>' +
+      '<td>' + member.namestaff + '</td>' +
       '<td>' + member.phone + '</td>' + 
       '<td>' + member.email + '</td>' +
       '<td>' + member.password + '</td>' +
@@ -74,7 +74,7 @@ function getMember() {
   .then(function(member) {
     member = member.val();
     
-    $('#title').val(member.title);
+    $('#namestaff').val(member.namestaff);
     $('#phone').val(member.phone);
     $('#email').val(member.email);
     $('#password').val(member.password);
