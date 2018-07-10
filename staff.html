@@ -2,13 +2,13 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>ตรวจสอบ</title>
+  <title>รายชื่ออู่</title>
   <link rel="stylesheet" href="css/style.css">
    <!--Import Google Icon Font-->
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
    <!--Import materialize.css-->
    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-   <script src="./js/App_admin.js"></script>
+   <script src="./js/App_garege.js"></script>
    <!--Let browser know website is optimized for mobile-->
    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
@@ -19,19 +19,11 @@
       <div class="background">
         <img src="images/BB.png">
       </div>
-      <a ><img class="circle" src="images/businessman.png"></a>
-      <a><span class="white-text name" id="name_admin">NONE</span></a>
-      <a ><span class="white-text email" id="name_email">NONE</span></a>
+      <a href="#!user"><img class="circle" src="images/businessman.png"></a>
+      <a href="#!name"><span class="white-text name" id="name_admin">NONE</span></a>
+      <a href="#!email"><span class="white-text email" id="name_email">NONE</span></a>
     </div></li>
-    <li><a href="#!"><i class="material-icons"></i>เมนู</a></li>
-    <li><a href="resetpassword.html"> <button class="btn btn-danger"  >เปลี่ยนรหัสผ่าน</button>
-      &nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="admin_garage.html"> <button class="btn btn-danger"  >รายชื่ออู่</button>
-        &nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="staff_garage.html"> <button class="btn btn-danger"  >รายชื่อพนักงานอู่</button>
-          &nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="staff_wait.html"> <button class="btn btn-danger" ><i class="material-icons left">fast_forward</i>พนักงานรอกานยืนยัน</button>
-          &nbsp;&nbsp;&nbsp;</a></li>
+    <li><a href="#!"><i class="material-icons"></i>test </a></li>
     <li><a><button onclick="sendEmailVerification()" class="btn btn-danger" disabled id="quickstart-verify-email" name="verify-email">ยืนยันตัวตน</button>
       &nbsp;&nbsp;&nbsp;</a></li>
     <li><div class="divider"></div></li>
@@ -42,21 +34,21 @@
   
 
 
-  <h3 class="center">รายชื่อพนักงานอู่ รอการตรวจสอบ</h3>
-         
+  <h3 class="center">รายชื่อสมาชิก</h3>              
     </div>
   <div class="row">
+      <p id="ss" class="center"></p>
+      <p id="ww" class="center"></p>
   <form class="col sm-12 l6 offset-l3">
   <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
   </form>
     <table class="highlight" class="responsive-table" id="myTable">
       <thead>
         <tr>
-          <th>ชื่อพนักงาน</th>
-          <th>เบอร์โทร</th>
-          <th>อีเมล์</th>
+          <th>ชื่อ</th>
           <th>รหัสผ่าน</th>
-          <th>สถานะ</th>
+          <th>อีเมล์</th>
+          <th>เบอร์มือถือ</th>
         </tr>
       </thead>
       <tbody></tbody>
@@ -64,7 +56,20 @@
   </div>
 
   <br>
-  <br> 
+  <br>
+
+  <h3 class="center">การจัดการอู่</h3>
+  <div class="row">
+      <form class="col sm-12 l6 offset-l3">
+        <input type="text" id="name" placeholder="ชื่ออู่" >
+        <input type="text" id="password" placeholder="รหัส">
+        <input type="text" id="email" placeholder="อีเมล์">
+        <input type="text" id="phone" placeholder="เบอร์โทร">
+        <button class="btn" type="submit" id="submit" onclick="reload()" >Add</button>
+        <button id="cancel" class="btn grey darken-1 white-text">Cancel</button>
+      </form>
+    </div>
+ 
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -77,8 +82,9 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
 <script src="./route.js"></script>
-<script src="js/staff_wait.js"></script>  
+<script src="js/staff.js"></script>  
 <script src="js/Search.js"></script>
+  <footer class="page-footer">
 </footer>
 </body>
 </html>

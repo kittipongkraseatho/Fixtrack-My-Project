@@ -30,7 +30,7 @@
         &nbsp;&nbsp;&nbsp;</a></li>
     <li><a href="staff_garage.html"> <button class="btn btn-danger"> <i class="material-icons left">fast_forward</i>รายชื่อพนักงานอู่</button>
           &nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="staff_wait.html"> <button class="btn btn-danger"  >รอการยืนยัน</button>
+    <li><a href="staff_wait.html"> <button class="btn btn-danger"  >พนักงานรอกานยืนยัน</button>
           &nbsp;&nbsp;&nbsp;</a></li>
     <li><a><button onclick="sendEmailVerification()" class="btn btn-danger" disabled id="quickstart-verify-email" name="verify-email">ยืนยันตัวตน</button>
       &nbsp;&nbsp;&nbsp;</a></li>
@@ -66,15 +66,15 @@
   <br>
   <br>
 
-  <h3 class="center">การจัดการพนักงานอู่</h3>
+  <h3 class="center">การจัดการอู่</h3>
   <div class="row">
       <form class="col sm-12 l6 offset-l3">
-        <input type="text" id="namestaff" placeholder="ชื่อพนักงาน" >
+        <input type="text" id="title" placeholder="ชื่อพนักงาน" >
         <input type="text" id="phone" placeholder="เบอร์โทร">
         <input type="text" id="email" placeholder="อีเมล์">
         <input type="text" id="password" placeholder="รหัสผ่าน">
-        <input disabled type="text" id="status" placeholder="สถานะ">
-        <button class="btn" type="submit" id="submit">Add</button>
+        <input type="text" id="status" placeholder="สถานะ">
+        <button class="btn" type="submit" id="submit" onclick="reload()" >Add</button>
         <button id="cancel" class="btn grey darken-1 white-text">Cancel</button>
       </form>
     </div>
@@ -93,5 +93,7 @@
 <script src="./route.js"></script>
 <script src="js/staff.js"></script>  
 <script src="js/Search.js"></script>
+  <footer class="page-footer">
+</footer>
 </body>
 </html>
