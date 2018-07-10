@@ -33,7 +33,7 @@
 
     <li><a href="staff_garage.html"> <button class="btn btn-danger"  >รายชื่อพนักงานอู่</button>
           &nbsp;&nbsp;&nbsp;</a></li>
-    <li><a href="staff_wait.html"> <button class="btn btn-danger"  >รอการยืนยัน</button>
+    <li><a href="staff_wait.html"> <button class="btn btn-danger"  >พนักงานรอกานยืนยัน</button>
           &nbsp;&nbsp;&nbsp;</a></li>
     <li><a><button onclick="sendEmailVerification()" class="btn btn-danger" disabled id="quickstart-verify-email" name="verify-email">ยืนยันตัวตน</button>
       &nbsp;&nbsp;&nbsp;</a></li>
@@ -75,8 +75,7 @@
         <input type="text" id="phone" placeholder="เบอร์โทร">
         <input type="text" id="email" placeholder="อีเมล์">
         <input type="text" id="address" placeholder="ที่อยู่">
-        <input disabled type="text" id="imageUrl" placeholder="รูปภาพ">
-        <button class="btn" type="submit" id="submit" >Add</button>
+        <button class="btn" type="submit" id="submit" onclick="reload()" >Add</button>
         <button id="cancel" class="btn grey darken-1 white-text">Cancel</button>
       </form>
     </div>
@@ -95,6 +94,7 @@
 <script src="./route.js"></script>
 <script src="js/admin.js"></script>  
 <script src="js/Search.js"></script>
-
+  <footer class="page-footer">
+</footer>
 </body>
 </html>
