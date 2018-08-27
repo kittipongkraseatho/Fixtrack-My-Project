@@ -76,9 +76,9 @@ function handleSignUp() {
           var uid = user.uid;
           var providerData = user.providerData;
           
-           var cc = 'admin@admin.com';
+           var cc = 'kittipongbig@gmail.com';
               if(C_email != cc){
-                window.location = "Customer.html";
+                window.location = "staff.html";
                 // window.location = "admin_garage.html";
               }else{
                 // window.location = "staff.html";
